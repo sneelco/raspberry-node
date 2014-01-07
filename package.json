@@ -1,0 +1,21 @@
+{
+  "name": "raspberry-node",
+  "version": "0.0.1",
+  "description": "Simple NodeJS app to interface with a switch and leds via gpio",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/truesneel/raspberry-node.git"
+  },
+  "author": "Scott Neel",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/truesneel/raspberry-node/issues"
+  },
+  "dependencies": {
+    "rpi-gpio": "0.0.4"
+  }
+}
