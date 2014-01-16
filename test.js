@@ -27,7 +27,7 @@ leds.forEach(function (led) {
 
 //Initialize the button and start the monitor function
 gpio.setup(button.pin, gpio.DIR_IN, function () {
-	setInterval(monitorButton, 50);
+  setInterval(monitorButton, 50);
 });
 
 //Setup an event for a stateChange
@@ -68,17 +68,17 @@ button.on('shortPress', function () {
   });
 
   //Increment the toggle
-	toggle++;
+  toggle++;
 
   //If the toggle is greater then the number of leds, reset to zero
-	if (toggle > leds.length) {
-		toggle = 0;
+  if (toggle > leds.length) {
+    toggle = 0;
   }
 
   //Set the led state based on the toggle
-	if ((toggle - 1) >= 0) {
-		leds[toggle - 1].state = true;
-	}
+  if ((toggle - 1) >= 0) {
+    leds[toggle - 1].state = true;
+  }
 
   //Set the state of each led
   leds.forEach(function (led) {
@@ -100,13 +100,13 @@ button.on('error', function (err) {
 //Main function to monitor the button states
 monitorButton = function () {
   //Iniate a read of the button
-	gpio.read(button.pin, function (err, value) {
+  gpio.read(button.pin, function (err, value) {
     //Emit an error if one is detected
-		if (err) {
-			button.emit('error', err);
-		} else {
+    if (err) {
+      button.emit('error', err);
+    } else {
       //If the button state differs from the current state process the events
-			if (button.state !== value) {
+      if (button.state !== value) {
         button.emit('stateChange', button.state, value);
         button.state = value;
 
